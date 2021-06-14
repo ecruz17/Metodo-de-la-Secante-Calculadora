@@ -7,6 +7,7 @@ function calculate() {
     var fx0 = $('#val-fx0').val();
     var fx1 = ((3*1) + Math.sin(1)) - Math.pow(euler, 1);
     var decimales = $('#val-decimals').val();
+    var iter = $('#val-iter').val();
     
     
     document.querySelector('#val-fx1').value = fx1;
@@ -20,7 +21,7 @@ function calculate() {
     //let ep = ((res - 2.61538)/res) * 100
 
 
-    if (x0 != "" && x1 != "" && fx0 != "" && fx1 != "" && decimales != "") {
+    if (x0 != "" && x1 != "" && fx0 != "" && fx1 != "" && decimales != "" && iter != "") {
         //Guarda las variables introducidas en el registro de x0 y fx0
         regX0.push(x1);
         regFx0.push(fx1);
@@ -38,7 +39,7 @@ function calculate() {
         this._showTable(counter, x, fx2);
 
         //Ciclo para las demás iteraciones
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < iter-1; i++) {
             counter++
 
             regX0.push(x1);
@@ -101,16 +102,16 @@ function clean() {
     $('#val-fx0').val("");
     $('#val-fx1').val("");
     $('#val-decimals').val("");
-    this._showTable('', '', '');
-
+    $('#val-iter').val("");
+    $('#table-content tbody').empty();
+    location.reload();
 }
 
 
 function _showTable(counter, x, fx2) {
-    $("<tr><td>" + counter + "<tr/><td/>").appendTo("#res-n");
-    $("<tr><td>" + x + "<tr/><td/>").appendTo("#res-x");
-    $("<tr><td>" + fx2 + "<tr/><td/>").appendTo("#res-fx");
-    //$("<tr><td>" + ep + "<tr/><td/>").appendTo('#res-ep');
+    $("<tr><td>" + counter + "<tr/><tr/>").appendTo("#res-n");
+    $("<tr><td>" + x + "<tr/><tr/>").appendTo("#res-x");
+    $("<tr><td>" + fx2 + "<tr/><tr/>").appendTo("#res-fx");
 }
 
 function _getLast(array) {
