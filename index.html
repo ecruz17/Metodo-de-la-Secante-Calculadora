@@ -16,25 +16,32 @@
         <p id="header-text">Calculadora de ecuaciones no lineales mediante el método de la secante.</p>
         <p id="header-text">Utilizando la función del ejercicio 4: <br> 3x + sen(x) - e^x ; [0, 1] </br> </p>
     </div>
-    <div class="content-box">        
-        <div id="calc-inputs">
-            <div class="field">
-                <input type="text" id="val-x0" placeholder="X0">
+    <div class="content-box">  
+        <div id="table-inps">
+            <div id="calc-inputs">
+                <div class="field">
+                    <input type="text" id="val-x0" placeholder="X0">
+                </div>
+                <div class="field">
+                    <input type="text" id="val-x1" placeholder="X1">
+                </div>
+                <div class="field">
+                    <input type="text" id="val-fx0" placeholder="F(X0)">
+                </div>
+                <div class="field">
+                    <input type="text" id="val-fx1" placeholder="F(X1)" disabled>
+                </div>                       
             </div>
             <div class="field">
-                <input type="text" id="val-x1" placeholder="X1">
+                <input type="number" id="val-decimals" placeholder="Número de decimales" size="10px">
             </div>
-            <div class="field">
-                <input type="text" id="val-fx0" placeholder="F(X0)">
-            </div>
-            <div class="field">
-                <input type="text" id="val-fx1" placeholder="F(X1)" disabled>
-            </div>
-            <div class="btns">
-                <button id="btn-calcular" onclick="calculate()">Calcular</button>
-                <button id="btn-limpiar" onclick="clean()">Limpiar</button>
-            </div>
+        </div>   
+        
+        <div class="btns">
+            <button id="btn-calcular" onclick="calculate()">Calcular</button>
+            <button id="btn-limpiar" onclick="clean()">Limpiar</button>
         </div>
+        
     
         <div id="table-div">
             <table id="table-content">
