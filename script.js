@@ -5,7 +5,10 @@ function calculate() {
     var x0 = $('#val-x0').val();
     var x1 = $('#val-x1').val();
     var fx0 = $('#val-fx0').val();
-    var fx1 = $('#val-fx1').val();
+    //var fx1 = $('#val-fx1').val();
+    var fx1 = ((3*1) + Math.sin(1)) - Math.pow(euler, 1);
+    
+    document.querySelector('#val-fx1').value = fx1;
 
     var regX0 = new Array();
     var regX1 = new Array();
